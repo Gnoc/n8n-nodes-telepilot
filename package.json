@@ -1,6 +1,6 @@
 {
-  "name": "@telepilotco/n8n-nodes-telepilot",
-  "version": "0.4.0",
+  "name": "@gnoc/n8n-nodes-telepilot",
+  "version": "0.4.1",
   "description": "Your personal Telegram CoPilot",
   "keywords": [
     "telepilot.co",
@@ -15,15 +15,12 @@
     "dist",
     "deploy/test-n8n-imports"
   ],
-  "license": "CC BY-NC-ND",
+  "license": "SEE LICENSE IN README.MD",
   "homepage": "https://telepilot.co/",
-  "author": {
-    "name": "TelePilot",
-    "email": "contact@telepilot.co"
-  },
+  "author": "TelePilot <contact@telepilot.co>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/telepilotco/n8n-nodes-telepilot.git"
+    "url": "git+https://github.com/telepilotco/n8n-nodes-telepilot.git"
   },
   "main": "index.js",
   "scripts": {
@@ -61,5 +58,8 @@
     "@telepilotco/tdlib-binaries-prebuilt": "^1.8.14",
     "debug": "^4.3.4",
     "typedi": "^0.10.0"
+  },
+  "bugs": {
+    "url": "https://github.com/telepilotco/n8n-nodes-telepilot/issues"
   }
 }

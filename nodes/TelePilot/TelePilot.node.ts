@@ -303,10 +303,14 @@ export class TelePilot implements INodeType {
 		try {
 			if (resource === 'user') {
 				if (operation === 'getMe') {
-					const result = await client.invoke({
-						_: 'getMe',
+					// const result = await client.invoke({
+					// 	_: 'getMe',
+					// });
+					const result2 = await client.invoke({
+						_: 'getActiveSessions',
 					});
-					returnData.push(result);
+					// returnData.push(result);
+					returnData.push(result2);
 				} else if (operation === 'getUser') {
 					const user_id = this.getNodeParameter('user_id', 0) as string;
 					result = await client.invoke({
@@ -349,12 +353,14 @@ export class TelePilot implements INodeType {
 				if (operation === 'getChatHistory') {
 					const chat_id = this.getNodeParameter('chat_id', 0) as string;
 					const from_message_id = this.getNodeParameter('from_message_id', 0) as string;
+					const offset = this.getNodeParameter('offset', -10) as string;
+					const limit = this.getNodeParameter('limit', 100) as string;
 					result = await client.invoke({
 						_: 'getChatHistory',
 						chat_id,
 						from_message_id,
-						offset: 0,
-						limit: 1,
+						offset: offset,
+						limit: limit,
 						only_local: false,
 					});
 					returnData.push(result);
